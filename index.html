@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in or create your Funvilla account to save favorite games and track your activity.">
 
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="assetss/css/styles.css">
@@ -14,7 +15,7 @@
     <title>Login And Sign in</title>
 </head>
 
-<body>
+<body data-auth-page>
     <div class="login">
         <div class="login__content">
             <div class="login__img">
@@ -22,22 +23,44 @@
             </div>
 
             <div class="login__forms">
-                <form action="" class="login__registre" id="login-in">
+                <form action="" class="login__registre" id="login-in" novalidate>
                     <h1 class="login__title">Sign In</h1>
 
                     <div class="login__box">
                         <i class='bx bx-user login__icon'></i>
-                        <input type="text" placeholder="Username" class="login__input" id="login-username">
+                        <input type="email" placeholder="Email" class="login__input" id="login-username"
+                            name="email" autocomplete="email" required>
                     </div>
 
                     <div class="login__box">
                         <i class='bx bx-lock-alt login__icon'></i>
-                        <input type="password" placeholder="Password" class="login__input" id="login-password">
+                        <input type="password" placeholder="Password" class="login__input" id="login-password"
+                            name="password" autocomplete="current-password" required>
                     </div>
 
-                    <a href="#" class="login__forgot">Forgot password?</a>
+                    <a href="#" class="login__forgot" data-forgot-password>Forgot password?</a>
 
-                    <button type="button" class="login__button" onclick="handleLogin()">Sign In</button>
+                    <p class="auth-message" data-login-message role="status" hidden></p>
+
+                    <button type="submit" class="login__button">Sign In</button>
+
+                    <div class="login__alt">
+                        <div class="login__divider"><span>or</span></div>
+                        <button type="button" class="login__alt-button" id="guest-login-btn">
+                            <i class='bx bx-user-voice'></i>
+                            Guest Login
+                        </button>
+                        <button type="button" class="login__alt-button login__alt-button-google" id="google-login-btn">
+                            <svg class="login__google-icon" viewBox="0 0 48 48" aria-hidden="true">
+                                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+                                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+                                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+                                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+                                <path fill="none" d="M0 0h48v48H0z"></path>
+                            </svg>
+                            Sign in with Google
+                        </button>
+                    </div>
 
                     <div>
                         <span class="login__account">Don't have an Account ?</span>
@@ -46,35 +69,34 @@
                 </form>
 
 
-                <form action="" class="login__create none" id="login-up">
+                <form action="" class="login__create none" id="login-up" novalidate>
                     <h1 class="login__title">Create Account</h1>
 
                     <div class="login__box">
                         <i class='bx bx-user login__icon'></i>
-                        <input type="text" placeholder="Username" class="login__input" id="signup-username">
+                        <input type="text" placeholder="Username" class="login__input" id="signup-username"
+                            name="username" autocomplete="username" minlength="2" maxlength="30" required>
                     </div>
 
                     <div class="login__box">
                         <i class='bx bx-at login__icon'></i>
-                        <input type="text" placeholder="Email" class="login__input" id="signup-email">
+                        <input type="email" placeholder="Email" class="login__input" id="signup-email"
+                            name="email" autocomplete="email" required>
                     </div>
 
                     <div class="login__box">
                         <i class='bx bx-lock-alt login__icon'></i>
-                        <input type="password" placeholder="Password" class="login__input" id="signup-password">
+                        <input type="password" placeholder="Password" class="login__input" id="signup-password"
+                            name="password" autocomplete="new-password" minlength="6" required>
                     </div>
 
-                    <button type="button" class="login__button" onclick="handleSignup()">Sign Up</button>
+                    <p class="auth-message" data-signup-message role="status" hidden></p>
+
+                    <button type="submit" class="login__button">Sign Up</button>
 
                     <div>
                         <span class="login__account">Already have an Account ?</span>
                         <span class="login__signup" id="sign-in">Sign In</span>
-                    </div>
-
-                    <div class="login__social">
-                        <a href="#" class="login__social-icon"><i class='bx bxl-facebook'></i></a>
-                        <a href="#" class="login__social-icon"><i class='bx bxl-instagram'></i></a>
-                        <a href="#" class="login__social-icon"><i class='bx bxl-google'></i></a>
                     </div>
                 </form>
             </div>
@@ -82,81 +104,10 @@
     </div>
 
     <!--===== MAIN JS =====-->
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth-compat.js"></script>
+    <script src="assets/js/funville.js"></script>
     <script src="assetss/js/main.js"></script>
 </body>
-<script>
-    const API_BASE_URL = 'https://funville.onrender.com'; // Replace with your backend's base URL
-
-    async function handleLogin() {
-        const email = document.getElementById('login-username').value;
-        const password = document.getElementById('login-password').value;
-
-        try {
-            const response = await fetch(`${API_BASE_URL}/login`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                // alert('Login successful');
-                // Store JWT in localStorage for future requests
-                window.location.href = "main.html"
-                localStorage.setItem('token', data.token);
-            } else {
-                alert(data.message || 'Login failed');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Server error');
-        }
-    }
-
-    async function handleSignup() {
-        const username = document.getElementById('signup-username').value;
-        const email = document.getElementById('signup-email').value;
-        const password = document.getElementById('signup-password').value;
-
-        try {
-            const response = await fetch(`${API_BASE_URL}/signup`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, email, password }),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-
-                const signUp = document.getElementById('sign-up'),
-                    signIn = document.getElementById('sign-in'),
-                    loginIn = document.getElementById('login-in'),
-                    loginUp = document.getElementById('login-up')
-
-                // Remove classes first if they exist
-                loginIn.classList.remove('none')
-                loginUp.classList.remove('block')
-
-                // Add classes
-                loginIn.classList.toggle('block')
-                loginUp.classList.toggle('none')
-
-                // alert('Signup successful');
-                // Automatically log in or redirect to login page if needed
-            } else {
-                alert(data.message || 'Signup failed');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Server error');
-        }
-    }
-</script>
 
 </html>

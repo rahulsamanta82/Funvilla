@@ -54,9 +54,10 @@ img{
 .login{
   display: grid;
   grid-template-columns: 100%;
-  height: 100vh;
+  min-height: 100vh;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  padding: 1.5rem 0;
 }
 
 .login__content{
@@ -74,7 +75,7 @@ img{
 
 .login__forms{
   position: relative;
-  height: 368px;
+  min-height: 368px;
 }
 
 .login__registre, .login__create{
@@ -148,14 +149,36 @@ img{
 
 .login__button{
   display: block;
+  width: 100%;
   padding: 1rem;
   margin: 2rem 0;
+  border: 0;
+  cursor: pointer;
   background-color: var(--first-color);
   color: #FFF;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
   font-weight: 600;
   text-align: center;
   border-radius: .5rem;
   transition: .3s;
+}
+
+.login__button:disabled{
+  cursor: wait;
+  opacity: .75;
+}
+
+.auth-message{
+  margin: .75rem 0 -.75rem;
+  font-size: var(--small-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+  color: #C0392B;
+}
+
+.auth-message-info{
+  color: var(--first-color);
 }
 
 .login__button:hover{
@@ -186,6 +209,72 @@ img{
   margin: 0 1.5rem;
 }
 
+.login__alt{
+  margin-top: 1.25rem;
+  display: grid;
+  gap: .75rem;
+  text-align: center;
+}
+
+.login__divider{
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  color: var(--first-color-light);
+  font-size: var(--small-font-size);
+  font-weight: 600;
+}
+
+.login__divider::before,
+.login__divider::after{
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: rgba(164, 158, 172, .4);
+}
+
+.login__alt-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  width: 100%;
+  padding: .85rem 1rem;
+  border: 1px solid rgba(157, 75, 255, .35);
+  border-radius: .5rem;
+  background-color: #FFF;
+  color: var(--first-color-dark);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.login__alt-button:hover{
+  border-color: var(--first-color);
+  background-color: rgba(157, 75, 255, .06);
+}
+
+.login__alt-button:disabled{
+  cursor: wait;
+  opacity: .7;
+}
+
+.login__alt-button-google{
+  gap: .7rem;
+}
+
+.login__google-icon{
+  width: 18px;
+  height: 18px;
+}
+
+.login__alt-button i{
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+
 /*Show login*/
 .block{
   display: block;
@@ -206,7 +295,7 @@ img{
 
 @media screen and (min-width: 1024px){
   .login{
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
   }
 

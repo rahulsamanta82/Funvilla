@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rahul Samant</title>
-  <meta name="title" content="Unigine - Epic Games Made For True Gamers!">
-  <meta name="description" content="This is an esports and gaming html template made by codewithsadee">
+  <title>Funvilla · Games, puzzles and creative tools for young players</title>
+  <meta name="title" content="Funvilla · Games, puzzles and creative tools for young players">
+  <meta name="description" content="Play free browser games, puzzles and creative tools on Funvilla. Save favorites and keep track of what you played.">
 
   <!-- 
     - favicon
@@ -27,6 +27,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/funville.css">
 
   <!-- 
     - preload images
@@ -45,8 +46,8 @@
   <header class="header active" data-header>
     <div class="container">
 
-      <a href="#" class="logo">
-        <img src="./assets/images/logo1.png" width="110" height="53" alt="unigine home">
+      <a href="main.html#home" class="logo">
+        <img src="./assets/images/logo1.png" width="110" height="53" alt="Funvilla home">
       </a>
 
       <nav class="navbar" data-navbar>
@@ -57,7 +58,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#tournament" class="navbar-link" data-nav-link>Games's</a>
+            <a href="#tournament" class="navbar-link" data-nav-link>Games</a>
           </li>
 
           <li class="navbar-item">
@@ -65,13 +66,57 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link" data-nav-link>contact</a>
+            <a href="#help" class="navbar-link" data-nav-link>help</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#contact" class="navbar-link" data-nav-link>contact</a>
           </li>
 
         </ul>
       </nav>
 
-      <!-- <a href="assets/login sign/index.html" class="btn" data-btn>Create Account</a> -->
+      <div class="header-actions">
+        <div class="header-guest" data-auth-guest>
+          <a href="index.html" class="header-signin">Sign in</a>
+          <a href="index.html#signup" class="header-join">Join free</a>
+        </div>
+
+        <div class="header-user" data-auth-user hidden>
+          <button type="button" class="profile-trigger" data-profile-trigger aria-haspopup="true"
+            aria-expanded="false">
+            <span class="profile-avatar" data-user-avatar>F</span>
+            <span class="profile-trigger-name" data-user-name>Player</span>
+            <ion-icon name="chevron-down-outline" aria-hidden="true" class="profile-chevron"></ion-icon>
+          </button>
+
+          <div class="profile-menu" data-profile-menu hidden>
+            <div class="profile-menu-head">
+              <span class="profile-avatar profile-avatar-lg" data-user-initials>F</span>
+              <div class="profile-menu-identity">
+                <p class="profile-menu-name" data-user-name>Player</p>
+                <p class="profile-menu-email" data-user-email></p>
+              </div>
+            </div>
+
+            <div class="profile-menu-links">
+              <a href="profile.html">
+                <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                My profile
+              </a>
+              <a href="profile.html#activity">
+                <ion-icon name="game-controller-outline" aria-hidden="true"></ion-icon>
+                My gaming activity
+              </a>
+            </div>
+
+            <button type="button" class="profile-logout" data-logout>
+              <ion-icon name="log-out-outline" aria-hidden="true"></ion-icon>
+              Log out
+            </button>
+          </div>
+        </div>
+      </div>
 
       <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
         <span class="line line-1"></span>
@@ -96,12 +141,11 @@
       <div class="hero has-before" id="home">
         <div class="container">
 
-          <p class="section-subtitle">Enjoy The Games & Fun by Rahul !!</p>
-          <!-- <p class="section-subtitle">Created By Mr Rahul Samanta</p> -->
+          <p class="section-subtitle">Free games, puzzles & creative tools</p>
 
-          <h1 class="h1 title hero-title">Epic Games Made For <br> Kids!!</h1>
+          <h1 class="h1 title hero-title">Small games. <br> Big adventures.</h1>
 
-          <a href="assets/games  and  Files/Share Manu/index.html" class="btn" data-btn>Share With Your Friend's</a>
+          <a href="#tournament" class="btn" data-btn>Explore games</a>
 
           <div class="hero-banner">
             <img src="./assets/images/hero-banner.png" width="850" height="414" alt="hero banner" class="w-100">
@@ -124,261 +168,36 @@
         <div class="container">
 
           <p class="section-subtitle" id="upcoming-label" data-reveal="bottom">
-            Our All Games..
+            Free to play · Built to explore
           </p>
 
           <h2 class="h2 section-title" data-reveal="bottom">
-            Adventure Awaits <br> Masters <span class="span">"Funville"</span>
+            Find your next <span class="span">favourite</span>
           </h2>
 
           <p class="section-text" data-reveal="bottom">
-            Our success lies in creating happiness and refreshing young minds..!!
+            Search the full Funvilla collection, filter by category and save the games you love.
           </p>
 
-          <ol class="upcoming-list">
-
-            <li class="upcoming-item">
-
-              <div class="upcoming-card left has-before" data-reveal="left">
-
-                <img src="./assets/images/team-logo-1.png" width="86" height="81" loading="lazy"
-                  alt="Purple Death Cadets" class="card-banner">
-                <h3 class="h3 card-title">
-                <a href="assets/games  and  Files/1Breakout-Game/index.html">Bounce and Break!</a>
-                </h3>
-                <!-- <h3 class="h3 card-title">Purple Death Cadets</h3> -->
-         
-                <div class="card-meta">799 ₹/- [60% off]</div>  
-
-              </div>
-              
-              <div class="upcoming-time" data-reveal="bottom">
-                <time class="time" datetime="10:00">[ Free ]</time>
-
-                <time class="date" datetime="2022-05-25">Until 25TH Dec 2024</time>
-
-                <div class="social-wrapper">
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-youtube"></ion-icon>
-                  </a>
-
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-twitch"></ion-icon>
-                  </a>
-                </div>
-              </div>
-
-              <div class="upcoming-card right has-before" data-reveal="right">
-
-                <img src="./assets/images/team-logo-2.png" width="86" height="81" loading="lazy"
-                  alt="Trigger Brain Squad" class="card-banner">
-
-                  <h3 class="h3 card-title">
-                    <a href="assets/games  and  Files/2Snake Game/index.html">Snake Adventure</a>
-                  </h3>
-                <!-- <h3 class="h3 card-title">Trigger Brain Squad</h3> -->
-
-                <div class="card-meta">999 ₹/- [40% off]</div>
-
-              </div>
-
-            </li>
-
-            <li class="upcoming-item">
-
-              <div class="upcoming-card left has-before" data-reveal="left">
-
-                <img src="./assets/images/team-logo-3.png" width="86" height="81" loading="lazy"
-                  alt="The Black Hat Hackers" class="card-banner">
-
-                  <h3 class="h3 card-title">
-                    <a href="assets/games  and  Files/3Shadow run game/index.html">Run the Shadows</a>
-                  </h3>
-                <!-- <h3 class="h3 card-title">The Black Hat Hackers</h3> -->
-
-                <div class="card-meta">2999 ₹/- [10% off]</div>
-
-              </div>
-
-              <div class="upcoming-time" data-reveal="bottom">
-                <time class="time" datetime="12:30">[ Pro ]</time>
-
-                <time class="date" datetime="2024-01-10">Until 30TH Dec 2024</time>
-
-                <div class="social-wrapper">
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-youtube"></ion-icon>
-                  </a>
-
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-twitch"></ion-icon>
-                  </a>
-                </div>
-              </div>
-
-              <div class="upcoming-card right has-before" data-reveal="right">
-
-                <img src="./assets/images/team-logo-4.png" width="86" height="81" loading="lazy"
-                  alt="Your Worst Nightmare" class="card-banner">
-
-                  <h3 class="h3 card-title">
-                    <a href="assets/games  and  Files/4Rubik's Cube/index.html">Crack the Cube</a>
-                  </h3>
-                <!-- <h3 class="h3 card-title">Your Worst Nightmare</h3> -->
-
-                <div class="card-meta">699 ₹/- [30% off]</div>
-
-              </div>
-
-            </li>
-
-            <li class="upcoming-item">
-
-              <div class="upcoming-card left has-before" data-reveal="left">
-
-                <img src="./assets/images/team-logo-5.png" width="86" height="81" loading="lazy"
-                  alt="Witches And Quizards" class="card-banner">
-
-                  <h3 class="h3 card-title">
-                    <a href="assets/games  and  Files/5_2048 Game/index.html">Reach 2048!</a>
-                  </h3>
-                <!-- <h3 class="h3 card-title">Witches And Quizards</h3> -->
-
-                <div class="card-meta">599 ₹/- [25% off]</div>
-
-              </div>
-
-              <div class="upcoming-time" data-reveal="bottom">
-                <time class="time" datetime="04:20">[ Pro ]</time>
-
-                <time class="date" datetime="2024-12-15">Until 27TH Dec 2024</time>
-
-                <div class="social-wrapper">
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-youtube"></ion-icon>
-                  </a>
-
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-twitch"></ion-icon>
-                  </a>
-                </div>
-              </div>
-
-              <div class="upcoming-card right has-before" data-reveal="right">
-
-                <img src="./assets/images/team-logo-6.png" width="86" height="81" loading="lazy"
-                  alt="Resting Bitch Faces" class="card-banner">
-
-                  <h3 class="h3 card-title">
-                    <a href="assets/games  and  Files/6Tic-Tac-Toe/index.html">Tic-Tac-Toe Challenge</a>
-                  </h3>
-                <!-- <h3 class="h3 card-title">Resting Bitch Faces</h3> -->
-
-                <div class="card-meta">899 ₹/- [25% off]</div>
-
-              </div>
-
-            </li>
-
-            <!-- Try -->
-
-            <li class="upcoming-item">
-
-              <div class="upcoming-card left has-before" data-reveal="left">
-
-                <img src="./assets/images/team-logo-5.png" width="86" height="81" loading="lazy"
-                  alt="Witches And Quizards" class="card-banner">
-
-                  <h3 class="h3 card-title">
-                    <a href="assets/games  and  Files/7Crossy-Road-Game/index.html">Traffic's Match!</a>
-                  </h3>
-                <!-- <h3 class="h3 card-title">Witches And Quizards</h3> -->
-
-                <div class="card-meta">599 ₹/- [25% off]</div>
-
-              </div>
-
-              <div class="upcoming-time" data-reveal="bottom">
-                <time class="time" datetime="04:20">[ Pro ]</time>
-
-                <time class="date" datetime="2024-12-15">Until 22TH Dec 2024</time>
-
-                <div class="social-wrapper">
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-youtube"></ion-icon>
-                  </a>
-
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-twitch"></ion-icon>
-                  </a>
-                </div>
-              </div>
-
-              <div class="upcoming-card right has-before" data-reveal="right">
-
-                <img src="./assets/images/team-logo-6.png" width="86" height="81" loading="lazy"
-                  alt="Resting Bitch Faces" class="card-banner">
-
-                  <h3 class="h3 card-title">
-                    <a href="assets/games  and  Files/8Fruit-Slicer-Game/index.html">Resting Bitch Faces</a>
-                  </h3>
-                <!-- <h3 class="h3 card-title">Resting Bitch Faces</h3> -->
-
-                <div class="card-meta">899 ₹/- [25% off]</div>
-
-              </div>
-
-            </li>
-
-            <!-- <li class="upcoming-item">
-
-              <div class="upcoming-card left has-before" data-reveal="left">
-
-                <img src="./assets/images/team-logo-5.png" width="86" height="81" loading="lazy"
-                  alt="Witches And Quizards" class="card-banner">
-
-                  <h3 class="h3 card-title">
-                    <a href="assets/login form/index.html">Witches And Quizards</a>
-                  </h3>
-                <!-- <h3 class="h3 card-title">Witches And Quizards</h3> -->
-
-                <!-- <div class="card-meta">599 ₹/- [25% off]</div>
-
-              </div>
-
-              <div class="upcoming-time" data-reveal="bottom">
-                <time class="time" datetime="04:20">[ Pro ]</time>
-
-                <time class="date" datetime="2024-12-15">Until 19TH Dec 2024</time>
-
-                <div class="social-wrapper">
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-youtube"></ion-icon>
-                  </a>
-
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-twitch"></ion-icon>
-                  </a>
-                </div>
-              </div> -->
-
-              <!-- <div class="upcoming-card right has-before" data-reveal="right">
-
-                <img src="./assets/images/team-logo-6.png" width="86" height="81" loading="lazy"
-                  alt="Resting Bitch Faces" class="card-banner">
-
-                  <h3 class="h3 card-title">
-                    <a href="assets/login form/index.html">Resting Bitch Faces</a>
-                  </h3>
-                 <h3 class="h3 card-title">Resting Bitch Faces</h3> -->
-
-                <!-- <div class="card-meta">899 ₹/- [25% off]</div>
-
-              </div>
-
-            </li> --> 
-
-          </ol>
+          <div class="game-browser" data-game-browser>
+            <div class="game-toolbar">
+              <label class="game-search">
+                <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                <input type="search" placeholder="Search games, puzzles or tools" aria-label="Search games"
+                  data-game-search>
+              </label>
+
+              <div class="game-filters" data-game-filters aria-label="Filter games"></div>
+            </div>
+
+            <div class="game-grid" data-game-grid></div>
+
+            <div class="state-card game-empty" data-game-empty hidden>
+              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+              <h3 class="h3">No games found</h3>
+              <p data-game-empty-text>No games match your search. Try a different name or category.</p>
+            </div>
+          </div>
 
         </div>
       </section>
@@ -417,34 +236,33 @@
 
                 <div class="card-content">
 
-                  <a href="#" class="card-tag">For Prime Members Only [ 200 ₹/- ]</a>
+                  <a href="#tournament" class="card-tag">Community play</a>
 
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
                       <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
 
-                      <time class="card-meta-text" datetime="2022-01-01">Jan 01 2025</time>
+                      <time class="card-meta-text" datetime="2026-01-01">Available anytime</time>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
-                      <p class="card-meta-text">7 Members / Team</p>
+                      <p class="card-meta-text">Solo or with friends</p>
                     </li>
 
                   </ul>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Innovative Event Participate All Over The World.</a>
+                    <a href="#tournament" class="card-title">Pick a game and start playing in seconds.</a>
                   </h3>
 
                   <p class="card-text">
-                  
-                    Financial experts support or help you to to find out which way you can raise your funds more...
+                    No downloads and no waiting rooms. Every game in the Funvilla collection runs in your browser.
                   </p>
 
-                  <a href="#" class="link has-before">Read More</a>
+                  <a href="#tournament" class="link has-before">Explore games</a>
 
                 </div>
 
@@ -461,33 +279,33 @@
 
                 <div class="card-content">
 
-                  <a href="#" class="card-tag">Open For All [ Free ]</a>
+                  <a href="#help" class="card-tag">Open to everyone</a>
 
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
                       <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
 
-                      <time class="card-meta-text" datetime="2022-01-01">Dec 07 2024</time>
+                      <time class="card-meta-text" datetime="2026-01-01">Free to play</time>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
-                      <p class="card-meta-text">6 Members / Team</p>
+                      <p class="card-meta-text">All skill levels</p>
                     </li>
 
                   </ul>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">This Event Participate Indian's Only..</a>
+                    <a href="#help" class="card-title">Friendly games for every age and skill level.</a>
                   </h3>
 
                   <p class="card-text">
-                    Financial experts support or help you to to find out which way you can raise your funds more...
+                    From quick arcade rounds to calmer puzzles, there is something for every kind of player.
                   </p>
 
-                  <a href="#" class="link has-before">Read More</a>
+                  <a href="#help" class="link has-before">Visit help center</a>
 
                 </div>
 
@@ -504,33 +322,33 @@
 
                 <div class="card-content">
 
-                  <a href="#" class="card-tag">For Prime Members Only [ 750 ₹/- ]</a>
+                  <a href="#help" class="card-tag">Learning &amp; creating</a>
 
                   <ul class="card-meta-list">
 
                     <li class="card-meta-item">
                       <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
 
-                      <time class="card-meta-text" datetime="2022-01-01">Jan 08 2025</time>
+                      <time class="card-meta-text" datetime="2026-01-01">Updated regularly</time>
                     </li>
 
                     <li class="card-meta-item">
                       <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
-                      <p class="card-meta-text">2 Members / Team</p>
+                      <p class="card-meta-text">Kids &amp; families</p>
                     </li>
 
                   </ul>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Innovative Event Participate All Over The World.</a>
+                    <a href="#help" class="card-title">Build skills while having fun.</a>
                   </h3>
 
                   <p class="card-text">
-                    Financial experts support or help you to to find out which way you can raise your funds more...
+                    Try the password generator, solar system explorer and meme maker in the Fun &amp; Help Center.
                   </p>
 
-                  <a href="#" class="link has-before">Read More</a>
+                  <a href="#help" class="link has-before">Try the tools</a>
 
                 </div>
 
@@ -545,7 +363,7 @@
 
 
 
-      <section class="section news" aria-label="our latest news" id="news">
+      <section class="section news" aria-label="Funvilla help center" id="help">
         <div class="container">
 
           <p class="section-subtitle" data-reveal="bottom">Empowering children and kids with real-world digital problem-solving skills for a smarter future !!</p>
@@ -570,7 +388,7 @@
 
                   <div class="card-content">
 
-                    <a href="#" class="card-tag">Password Generator</a>
+                    <a href="assets/games  and  Files/c1_Password Generator/dist/index.html" class="card-tag">Password Generator</a>
 
                     <h3 class="h3">
                       <a href="assets/games  and  Files/c1_Password Generator/dist/index.html" class="card-title">A versatile multi-character password generator tailored to your specific security needs.</a>
@@ -589,7 +407,7 @@
 
                 <div class="card-content">
 
-                  <a href="#" class="card-tag">Explore Earth and Beyond</a>
+                  <a href="assets/games  and  Files/c2_Solar system explorer/template.html" class="card-tag">Explore Earth and Beyond</a>
 
                   <h3 class="h3">
                     <a href="assets/games  and  Files/c2_Solar system explorer/template.html" class="card-title">Discover Earth’s role in the Solar System and its relationship with celestial bodies.</a>
@@ -610,7 +428,7 @@
 
                 <div class="card-content">
 
-                  <a href="#" class="card-tag">Meme Generator.</a>
+                  <a href="assets/games  and  Files/c3_Meme-Founder-main/index.html" class="card-tag">Meme Generator.</a>
                   <h3 class="h3">
                     <a href="assets/games  and  Files/c3_Meme-Founder-main/index.html" class="card-title">Fun and safe meme generator designed specifically for kids to unleash their creativity.</a>
                   </h3>
@@ -636,15 +454,15 @@
     - #FOOTER
   -->
 
-  <footer class="footer">
+  <footer class="footer" id="contact">
 
     <div class="section footer-top">
       <div class="container">
 
         <div class="footer-brand">
 
-          <a href="#" class="logo">
-            <img src="./assets/images/logo1.png" width="150" height="73" loading="lazy" alt="Unigine logo">
+          <a href="main.html#home" class="logo">
+            <img src="./assets/images/logo1.png" width="150" height="73" loading="lazy" alt="Funvilla logo">
           </a>
 
           <p class="footer-text">
@@ -671,12 +489,6 @@
               </a>
             </li>
 
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-github"></ion-icon>
-              </a>
-            </li>
-
           </ul>
 
         </div>
@@ -688,23 +500,23 @@
           <ul>
 
             <li>
-              <a href="#" class="footer-link">Tournaments</a>
+              <a href="#tournament" class="footer-link">All games</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Help Center</a>
+              <a href="#help" class="footer-link">Help center</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Privacy and Policy</a>
+              <a href="#news" class="footer-link">News &amp; events</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Terms of Use</a>
+              <a href="profile.html" class="footer-link">My profile</a>
             </li>
 
             <li>
-              <a href="#" class="footer-link">Contact Us</a>
+              <a href="#contact" class="footer-link">Contact us</a>
             </li>
 
           </ul>
@@ -726,13 +538,13 @@
           <div class="contact-item">
             <span class="span">Email Us:</span>
 
-            <a href="https://mail.google.com/mail/u/0/#inbox" class="contact-link">rs4655742@gmail.com</a>
+            <a href="mailto:rs4655742@gmail.com" class="contact-link">rs4655742@gmail.com</a>
           </div>
 
           <div class="contact-item">
             <span class="span">Phone:</span>
 
-            <a href="8250301143" class="contact-link">+91 8250301143</a>
+            <a href="tel:+918250301143" class="contact-link">+91 8250301143</a>
           </div>
 
         </div>
@@ -741,7 +553,7 @@
 
           <p class="title footer-list-title has-after">Newsletter Signup</p>
 
-          <form action="./index.html" method="get" class="footer-form">
+          <form action="#" method="get" class="footer-form" data-newsletter>
             <input type="email" name="email_address" required placeholder="Your Email" autocomplete="off"
               class="input-field">
 
@@ -794,6 +606,7 @@
   <!-- 
     - custom js link
   -->
+  <script src="./assets/js/funville.js"></script>
   <script src="./assets/js/script.js"></script>
 
   <!-- 

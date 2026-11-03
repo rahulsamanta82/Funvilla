@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My profile · Funvilla</title>
+  <meta name="description" content="View your Funvilla profile, favorite games and recent gaming activity.">
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Work+Sans:wght@600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/funville.css">
+</head>
+
+<body id="top" data-profile-page>
+
+  <header class="header active" data-header>
+    <div class="container">
+
+      <a href="main.html" class="logo">
+        <img src="./assets/images/logo1.png" width="110" height="53" alt="Funvilla home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="main.html#home" class="navbar-link">home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="main.html#tournament" class="navbar-link">Games</a>
+          </li>
+          <li class="navbar-item">
+            <a href="main.html#news" class="navbar-link">news</a>
+          </li>
+          <li class="navbar-item">
+            <a href="main.html#contact" class="navbar-link">contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-guest" data-auth-guest hidden>
+          <a href="index.html" class="header-signin">Sign in</a>
+          <a href="index.html#signup" class="header-join">Join free</a>
+        </div>
+
+        <div class="header-user" data-auth-user hidden>
+          <button type="button" class="profile-trigger" data-profile-trigger aria-haspopup="true"
+            aria-expanded="false">
+            <span class="profile-avatar" data-user-avatar>F</span>
+            <span class="profile-trigger-name" data-user-name>Player</span>
+            <ion-icon name="chevron-down-outline" aria-hidden="true" class="profile-chevron"></ion-icon>
+          </button>
+
+          <div class="profile-menu" data-profile-menu hidden>
+            <div class="profile-menu-head">
+              <span class="profile-avatar profile-avatar-lg" data-user-initials>F</span>
+              <div class="profile-menu-identity">
+                <p class="profile-menu-name" data-user-name>Player</p>
+                <p class="profile-menu-email" data-user-email></p>
+              </div>
+            </div>
+
+            <div class="profile-menu-links">
+              <a href="profile.html">
+                <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                My profile
+              </a>
+              <a href="#activity">
+                <ion-icon name="game-controller-outline" aria-hidden="true"></ion-icon>
+                My gaming activity
+              </a>
+            </div>
+
+            <button type="button" class="profile-logout" data-logout>
+              <ion-icon name="log-out-outline" aria-hidden="true"></ion-icon>
+              Log out
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main class="profile-page">
+    <div class="container">
+
+      <div class="state-card profile-loading" data-profile-loading>
+        <span class="spinner" aria-hidden="true"></span>
+        <h1 class="h3">Loading your profile</h1>
+        <p>Fetching your latest Funvilla account information.</p>
+      </div>
+
+      <div class="state-card profile-error" data-profile-error hidden>
+        <ion-icon name="cloud-offline-outline" aria-hidden="true"></ion-icon>
+        <h1 class="h3">We couldn't load your profile</h1>
+        <p>Check your connection and try again. Your session is still safe.</p>
+        <button type="button" class="btn" data-profile-retry>Try again</button>
+      </div>
+
+      <div data-profile-content hidden>
+
+        <section class="profile-hero" aria-labelledby="profile-title">
+          <div class="profile-identity">
+            <span class="profile-avatar profile-avatar-xl" data-user-initials>F</span>
+            <div>
+              <p class="section-subtitle">Player profile</p>
+              <h1 class="h2" id="profile-title" data-user-name>Player</h1>
+              <p class="profile-email" data-user-email></p>
+              <p class="profile-joined" data-user-joined></p>
+            </div>
+          </div>
+
+          <div class="profile-stats">
+            <div class="stat-card">
+              <strong data-stat-favorites>0</strong>
+              <span>Favorites</span>
+            </div>
+            <div class="stat-card">
+              <strong data-stat-recent>0</strong>
+              <span>Recently played</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="profile-section" id="favorites" aria-labelledby="favorites-title">
+          <div class="profile-section-head">
+            <div>
+              <p class="section-subtitle">Saved for later</p>
+              <h2 class="h2" id="favorites-title">Favorite <span class="span">games</span></h2>
+            </div>
+            <a href="main.html#tournament" class="link has-before">Browse all games</a>
+          </div>
+
+          <div class="game-grid profile-game-grid" data-favorites-grid></div>
+
+          <div class="state-card" data-empty-favorites hidden>
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            <h3 class="h3">No favorites yet</h3>
+            <p>Tap the heart on any game to keep it here for next time.</p>
+            <a href="main.html#tournament" class="btn" data-btn>Explore games</a>
+          </div>
+        </section>
+
+        <section class="profile-section" id="activity" aria-labelledby="activity-title">
+          <div class="profile-section-head">
+            <div>
+              <p class="section-subtitle">Games, favorites and sign-ins</p>
+              <h2 class="h2" id="activity-title">Gaming <span class="span">activity</span></h2>
+            </div>
+          </div>
+
+          <ul class="activity-list" data-recent-list></ul>
+
+          <div class="state-card" data-empty-recent hidden>
+            <ion-icon name="game-controller-outline" aria-hidden="true"></ion-icon>
+            <h3 class="h3">Your activity is empty</h3>
+            <p>Open a game while signed in and it will appear here.</p>
+            <a href="main.html#tournament" class="btn" data-btn>Play a game</a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          Funvilla &nbsp; | &nbsp; Built for young players &nbsp; | &nbsp; &copy; 2024 Rahul Samanta
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon>
+  </a>
+
+  <div class="cursor" data-cursor></div>
+
+  <script src="./assets/js/funville.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

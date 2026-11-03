@@ -4,23 +4,20 @@ const signUp = document.getElementById('sign-up'),
     loginIn = document.getElementById('login-in'),
     loginUp = document.getElementById('login-up')
 
+if (signUp && loginIn && loginUp) {
+    signUp.addEventListener('click', ()=>{
+        loginIn.classList.remove('block')
+        loginUp.classList.remove('none')
+        loginIn.classList.toggle('none')
+        loginUp.classList.toggle('block')
+    })
+}
 
-signUp.addEventListener('click', ()=>{
-    // Remove classes first if they exist
-    loginIn.classList.remove('block')
-    loginUp.classList.remove('none')
-
-    // Add classes
-    loginIn.classList.toggle('none')
-    loginUp.classList.toggle('block')
-})
-
-signIn.addEventListener('click', ()=>{
-    // Remove classes first if they exist
-    loginIn.classList.remove('none')
-    loginUp.classList.remove('block')
-
-    // Add classes
-    loginIn.classList.toggle('block')
-    loginUp.classList.toggle('none')
-})
+if (signIn && loginIn && loginUp) {
+    signIn.addEventListener('click', ()=>{
+        loginIn.classList.remove('none')
+        loginUp.classList.remove('block')
+        loginIn.classList.toggle('block')
+        loginUp.classList.toggle('none')
+    })
+}
